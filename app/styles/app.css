@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --aside-width: 400px;
   --cart-aside-summary-height-with-discount: 300px;
@@ -129,7 +133,7 @@ aside li {
 */
 .header {
   align-items: center;
-  background: #fff;
+  justify-content: center;
   display: flex;
   height: var(--header-height);
   padding: 0 1rem;

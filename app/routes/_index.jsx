@@ -2,12 +2,15 @@ import {defer} from '@shopify/remix-oxygen';
 import {Await, useLoaderData, Link} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Image, Money} from '@shopify/hydrogen';
+import Banner from '~/components/Banner';
+import ActiveSlider from '~/components/ActiveSlider';
+import HorizontalCard from '~/components/HorizontalCard';
 
 /**
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: 'Hydrogen | Home'}];
+  return [{title: 'Merci le merch'}];
 };
 
 /**
@@ -27,8 +30,13 @@ export default function Homepage() {
   const data = useLoaderData();
   return (
     <div className="home">
-      <FeaturedCollection collection={data.featuredCollection} />
-      <RecommendedProducts products={data.recommendedProducts} />
+      <Banner />
+      <ActiveSlider />
+      <section className="horizontalCard">
+      <HorizontalCard />
+      </section>
+      {/* <FeaturedCollection collection={data.featuredCollection} />
+      <RecommendedProducts products={data.recommendedProducts} /> */}
     </div>
   );
 }

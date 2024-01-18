@@ -1,0 +1,52 @@
+.header {
+    color: $wh;
+    &__links {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        @include tablette {
+            display: flex;
+        }
+
+        &--logo {
+            display: none;
+
+            @include mobile {
+                display: block;
+            }
+        }
+    }
+}
+
+.header-ctas {
+    min-width: 100%;
+    @include mobile {
+        min-width: unset;
+    }
+    .logomob {
+        display: block;
+        @include mobile {
+            display: none;
+        }
+        img {
+            width: 100px;
+        }
+    }
+}
+
+.header-menu-mobile-toggle {
+    svg {
+        color: $wh;
+        font-size: 25px;
+    }
+}
+
+.header-icons {
+    color: $wh;
+    display: flex;
+    align-items: center;
+    a {
+        padding-left: 10px;
+    }
+}

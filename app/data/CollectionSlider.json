@@ -1,0 +1,29 @@
+[
+
+    {
+        "name": "INDUSTRIAL",
+        "url": "",
+        "src": "./images/Card.png"
+    },
+    {
+        "name": "TECHPACKS",
+        "url": "",
+        "src": "./images/Card1.png"
+    },
+    {
+        "name": "STREET",
+        "url": "",
+        "src": "./images/Card2.png"
+    },
+    {
+        "name": "VANDALISM",
+        "url": "",
+        "src": "./images/Card.png"
+    },
+    {
+        "name": "PALETTE",
+        "url": "",
+        "src": "./images/Card.png"
+    }
+
+]

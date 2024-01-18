@@ -15,7 +15,12 @@ import {
 import favicon from '../public/favicon.svg';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
+import Styles from './styles/style.css';
 import {Layout} from '~/components/Layout';
+import stylesheet from "~/tailwind.css";
+import swiperStyle from "swiper/css"
+import swiperPagination from "swiper/css/pagination"
+import swiperFreemode from "swiper/css/free-mode"
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -39,6 +44,10 @@ export function links() {
   return [
     {rel: 'stylesheet', href: resetStyles},
     {rel: 'stylesheet', href: appStyles},
+    {rel: 'stylesheet', href: Styles},
+    {rel: 'stylesheet', href: swiperFreemode},
+    {rel: 'stylesheet', href: swiperStyle},
+    {rel: 'stylesheet', href: swiperPagination},
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',

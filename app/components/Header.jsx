@@ -1,6 +1,9 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faBurger, faCartShopping, faMagnifyingGlass, faUser, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import {Await, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
 import {useRootLoaderData} from '~/root';
+import Logo from '../images/Logo.png'
 
 /**
  * @param {HeaderProps}
@@ -9,15 +12,18 @@ export function Header({header, isLoggedIn, cart}) {
   const {shop, menu} = header;
   return (
     <header className="header">
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
+     <div className="header__links">
+     <NavLink prefetch="intent" to="/" style={activeLinkStyle} end className='header__links--logo'>
+        <img src={Logo} alt="Logo Merci Le Merch" />
       </NavLink>
       <HeaderMenu
         menu={menu}
         viewport="desktop"
         primaryDomainUrl={header.shop.primaryDomain.url}
       />
+     </div>
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
+    <hr />
     </header>
   );
 }
@@ -50,7 +56,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
           style={activeLinkStyle}
           to="/"
         >
-          Home
+          Accueil
         </NavLink>
       )}
       {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
@@ -88,11 +94,17 @@ function HeaderCtas({isLoggedIn, cart}) {
   return (
     <nav className="header-ctas" role="navigation">
       <HeaderMenuMobileToggle />
-      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
-        {isLoggedIn ? 'Account' : 'Sign in'}
+      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end className="logomob">
+        <img src={Logo} alt="Logo Merci Le Merch" />
       </NavLink>
-      <SearchToggle />
+      <div className="header-icons">
+      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
+        {isLoggedIn ? <FontAwesomeIcon icon={faUser} /> : <FontAwesomeIcon icon={faUserAlt} />}
+      </NavLink>
+      
       <CartToggle cart={cart} />
+
+      </div>
     </nav>
   );
 }
@@ -100,20 +112,22 @@ function HeaderCtas({isLoggedIn, cart}) {
 function HeaderMenuMobileToggle() {
   return (
     <a className="header-menu-mobile-toggle" href="#mobile-menu-aside">
-      <h3>☰</h3>
+      {/* <h3>☰</h3> */}
+      <FontAwesomeIcon icon={faBars} />
     </a>
   );
 }
 
 function SearchToggle() {
-  return <a href="#search-aside">Search</a>;
+  return <a href="#search-aside"><FontAwesomeIcon icon={faMagnifyingGlass} /></a>;
 }
 
 /**
  * @param {{count: number}}
  */
 function CartBadge({count}) {
-  return <a href="#cart-aside">Cart {count}</a>;
+  return <a href="#cart-aside">
+    <FontAwesomeIcon icon={faCartShopping} /> {count}</a>;
 }
 
 /**
@@ -183,7 +197,7 @@ const FALLBACK_HEADER_MENU = {
 function activeLinkStyle({isActive, isPending}) {
   return {
     fontWeight: isActive ? 'bold' : undefined,
-    color: isPending ? 'grey' : 'black',
+    // color: isPending ? '#5F5F5F' : 'white',
   };
 }
 
