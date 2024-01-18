@@ -43,7 +43,6 @@ function HorizontalCard() {
         </svg>
         <button className="card__btn">Découvrir</button>
         <button className="card__btn">Ajouter au panier</button>            
-
         </div>
       </article>
     )
