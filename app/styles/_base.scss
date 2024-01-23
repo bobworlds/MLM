@@ -3,3 +3,18 @@ header {
     background-color: $dark;
     color: $wh;
 }
+
+.title {
+    font-size: 35px;
+    max-width: 85%;
+    margin: auto;
+    h2 {
+        padding-left: 30px;
+        padding-bottom: 15px;
+        color: $grey;
+        &:hover {
+            transition: 0.5;
+            color: $wh;
+        }
+    }
+}

@@ -2,6 +2,7 @@ import BeginPack from '../images/mockuptee.png'
 
 function HorizontalCard() {
     return (
+      <section className='hCard'>
       <article className="card">
         <div className="card__img">
           <img src={BeginPack} alt="" />
@@ -41,12 +42,15 @@ function HorizontalCard() {
                     </clipPath>
                   </defs>
         </svg>
-        <button className="card__btn">Découvrir</button>
-        <button className="card__btn">Ajouter au panier</button>  
+        <div className="card__info--btn">
+        <button className="card__info--btn1">Découvrir</button>
+        <button className="card__info--btn2">Ajouter au panier</button>  
+        </div>
 
                   
         </div>
       </article>
+      </section>
     )
 }
 

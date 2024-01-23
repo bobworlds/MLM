@@ -5,7 +5,7 @@ import {Image, Money} from '@shopify/hydrogen';
 import Banner from '~/components/Banner';
 import ActiveSlider from '~/components/ActiveSlider';
 import HorizontalCard from '~/components/HorizontalCard';
-
+import Grid from '~/components/Grid';
 /**
  * @type {MetaFunction}
  */
@@ -31,10 +31,18 @@ export default function Homepage() {
   return (
     <div className="home">
       <Banner />
+      <div className="title">
+      <h2>ASSETS</h2>
+      <hr />
+      </div>
       <ActiveSlider />
-      <section className="horizontalCard">
       <HorizontalCard />
-      </section>
+      <div className="title">
+      <h2>MERCI L'ACTU</h2>
+      <hr />
+      </div>
+      <Grid />
+
       {/* <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} /> */}
     </div>
