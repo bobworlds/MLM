@@ -1,72 +1,62 @@
 .banner {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @include tablette {
+    flex-direction: row;
+  }
+  &__container {
     @include tablette {
-        flex-direction: row;
+      width: 50%;
     }
-    &__container {
-        @include tablette {
-            width: 50%;
-        }
+  }
+  &__img {
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    @include desktop {
+      height: 70vh;
     }
-    &__img {
-        width: 100%;
-        margin: 0 auto;
-        background-size: cover;
-        background-position: center;
-        height: 50vh;
-        border: solid 2px $grey;
-        @include desktop {
-            height: 70vh;
-        }
-        &.one {
-            background-image: url("../images/banner.png");
-            border-radius: 20px 20px 0 0;
+    &.one {
+      background-image: url('../images/banner.png');
+    }
+    &.two {
+      background-image: url('../images/mockuptee.png');
+    }
+  }
 
-            @include tablette {
-                border-radius: 20px 0 0 20px;
-            }
-        }
-        &.two {
-            background-image: url("../images/mockuptee.png");
-            border-radius: 0 0 20px 20px;
-
-            @include tablette {
-                border-radius: 0 20px 20px 0;
-            }
-        }
+  &__btn {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      position: absolute;
+      margin: auto;
+      bottom: 30px;
+      left: 50px;
+      z-index: 0;
+      border: solid 2px $grey;
+      background: $dark;
+      color: $grey;
+      text-transform: uppercase;
+      padding: 10px;
+      width: fit-content;
+      border-radius: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      svg {
+        margin-left: 5px;
+        font-size: 20px;
+      }
+      &:hover {
+        box-shadow: 1px 1px 8px lightgrey;
+        bottom: 32px;
+      }
     }
-    &__btn {
-        width: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        button {
-            position: absolute;
-            margin: auto;
-            bottom: 30px;
-            left: 50px;
-            z-index: 2;
-            border: solid 2px $grey;
-            background: $dark;
-            color: $grey;
-            text-transform: uppercase;
-            padding: 10px;
-            width: fit-content;
-            border-radius: 10px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            svg {
-                margin-left: 5px;
-                font-size: 20px;
-            }
-            &:hover {
-                box-shadow: 1px 1px 8px lightgrey;
-                bottom: 32px;
-            }
-        }
-    }
+  }
 }

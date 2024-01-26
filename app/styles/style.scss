@@ -1,10 +1,13 @@
-@import "./variables";
-@import "./mixins";
-@import "./base";
-@import "./header";
-@import "./banner";
-@import "./card";
+@import './variables';
+@import './mixins';
+@import './base';
+@import './header';
+@import './banner';
+@import './card';
+@import './grid';
+@import './newsletter';
+@import './custom';
 
 .swiper-pagination-bullet-active {
-    background-color: white;
+  background-color: white;
 }

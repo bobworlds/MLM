@@ -1,0 +1,38 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20px;
+  column-gap: 10px;
+  margin: auto;
+  @include tablette {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .card {
+    width: 100%;
+    border: none;
+  }
+  &__btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      background-color: transparent;
+      border: solid 1px $grey;
+      color: $grey;
+      &:hover {
+        transition: 0.7s;
+        background-color: transparent;
+        color: $wh;
+        border-color: $wh;
+      }
+    }
+  }
+}
+
+.card-img {
+  border: solid 1px $grey;
+}

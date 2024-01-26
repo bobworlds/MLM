@@ -1,52 +1,60 @@
 .header {
-    color: $wh;
-    &__links {
-        display: none;
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-        @include tablette {
-            display: flex;
-        }
-
-        &--logo {
-            display: none;
-
-            @include mobile {
-                display: block;
-            }
-        }
+  color: $wh;
+  border-radius: 20px;
+  //   max-width: 90%;
+  margin: auto;
+  box-shadow: 1px 1px 8px 1px rgb(50, 50, 50);
+  top: 20px;
+  padding: 10px 30px;
+  width: 95%;
+  &__links {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    @include tablette {
+      display: flex;
     }
+
+    &--logo {
+      display: none;
+
+      @include mobile {
+        display: block;
+        width: 6vw;
+      }
+    }
+  }
 }
 
 .header-ctas {
-    min-width: 100%;
+  min-width: 100%;
+  @include mobile {
+    min-width: unset;
+  }
+  .logomob {
+    display: block;
     @include mobile {
-        min-width: unset;
+      display: none;
     }
-    .logomob {
-        display: block;
-        @include mobile {
-            display: none;
-        }
-        img {
-            width: 100px;
-        }
+    img {
+      width: 100px;
     }
+  }
 }
 
 .header-menu-mobile-toggle {
-    svg {
-        color: $wh;
-        font-size: 25px;
-    }
+  svg {
+    color: $wh;
+    font-size: 25px;
+  }
 }
 
 .header-icons {
-    color: $wh;
-    display: flex;
-    align-items: center;
-    a {
-        padding-left: 10px;
-    }
+  color: $wh;
+  display: flex;
+  align-items: center;
+  a {
+    padding-left: 10px;
+  }
 }

@@ -1,0 +1,10 @@
+$body-bg: $dark;
+$body-color: $wh;
+$link-color: $grey;
+$link-decoration: none;
+$hr-margin-y: 0;
+$card-border-width: 2px;
+$card-border-color: $grey;
+$card-border-radius: 20px;
+
+@import '~bootstrap/scss/bootstrap';

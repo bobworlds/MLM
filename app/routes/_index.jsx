@@ -6,6 +6,7 @@ import Banner from '~/components/Banner';
 import ActiveSlider from '~/components/ActiveSlider';
 import HorizontalCard from '~/components/HorizontalCard';
 import Grid from '~/components/Grid';
+import Newsletter from '~/components/Newsletter';
 /**
  * @type {MetaFunction}
  */
@@ -32,14 +33,16 @@ export default function Homepage() {
     <div className="home">
       <Banner />
       <div className="title">
-      <h2>ASSETS</h2>
-      <hr />
+        <h2>ASSETS</h2>
+        <hr />
       </div>
       <ActiveSlider />
-      <HorizontalCard />
+      {/* <HorizontalCard /> */}
+      <Newsletter />
+
       <div className="title">
-      <h2>MERCI L'ACTU</h2>
-      <hr />
+        <h2>MERCI L'ACTU</h2>
+        <hr />
       </div>
       <Grid />
 
