@@ -1,5 +1,6 @@
 import {NavLink} from '@remix-run/react';
 import {useRootLoaderData} from '~/root';
+import Logo from '../images/Logo.png';
 
 /**
  * @param {FooterQuery & {shop: HeaderQuery['shop']}}
@@ -7,6 +8,7 @@ import {useRootLoaderData} from '~/root';
 export function Footer({menu, shop}) {
   return (
     <footer className="footer">
+      <img src={Logo} alt="" className="footer__img" />
       <FooterMenu menu={menu} primaryDomainUrl={shop.primaryDomain.url} />
     </footer>
   );

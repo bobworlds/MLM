@@ -1,0 +1,22 @@
+.pres {
+  @include tablette {
+    display: flex;
+    padding: 0 10%;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  &__content {
+    padding: 0 40px;
+    text-align: justify;
+
+    @include tablette {
+      padding: 0;
+      padding-right: 30px;
+    }
+  }
+  &__img {
+    img {
+      width: 100%;
+    }
+  }
+}

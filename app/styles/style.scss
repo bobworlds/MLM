@@ -2,12 +2,16 @@
 @import './mixins';
 @import './base';
 @import './header';
+@import './footer';
 @import './banner';
 @import './card';
 @import './grid';
 @import './newsletter';
 @import './custom';
-
+@import './anim';
+@import './_swiper';
+@import './ressources';
+@import './presentation';
 .swiper-pagination-bullet-active {
   background-color: white;
 }

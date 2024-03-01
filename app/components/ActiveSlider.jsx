@@ -39,7 +39,16 @@ function ActiveSlider() {
             {/* <div className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(${item.src})`}} /> */}
 
-            <img src={item.src} alt="" className="object-cover" />
+            <img
+              src={item.src}
+              alt=""
+              className="object-cover swiper-slide__img"
+            />
+            <img
+              src="https://cdn.shopify.com/s/files/1/0669/1186/3035/files/HOLDINGTEEMOCKUP.png?v=1704796150"
+              alt=""
+              className="object-cover swiper-slide__img1"
+            />
           </SwiperSlide>
         ))}
       </Swiper>

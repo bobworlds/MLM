@@ -1,6 +1,7 @@
 .header {
   color: $wh;
   border-radius: 20px;
+  z-index: 3;
   //   max-width: 90%;
   margin: auto;
   box-shadow: 1px 1px 8px 1px rgb(50, 50, 50);
@@ -11,7 +12,7 @@
     display: none;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     @include tablette {
       display: flex;
     }
@@ -28,9 +29,9 @@
 }
 
 .header-ctas {
-  min-width: 100%;
+  width: 100%;
   @include mobile {
-    min-width: unset;
+    width: 10%;
   }
   .logomob {
     display: block;

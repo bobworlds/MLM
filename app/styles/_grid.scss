@@ -3,7 +3,7 @@
   grid-template-columns: repeat(2, 1fr);
   row-gap: 20px;
   column-gap: 10px;
-  margin: auto;
+  margin: 0 10%;
   @include tablette {
     grid-template-columns: repeat(3, 1fr);
   }

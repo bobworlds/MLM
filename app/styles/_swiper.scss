@@ -1,0 +1,44 @@
+.swiper {
+  padding: 10vh 0;
+}
+
+.swiper-slide {
+  position: relative;
+  overflow: hidden;
+  transition: 1s;
+  @include tablette {
+    &:hover {
+      transform: scale(1.05) !important;
+      transition: 1s;
+      img:nth-child(1) {
+        opacity: 0;
+        z-index: -1;
+        transition: 1s;
+      }
+    }
+  }
+  &__img {
+    width: 100%;
+    position: relative;
+    opacity: 1;
+
+    @include tablette {
+      z-index: 2;
+      background-color: $dark;
+    }
+  }
+  &__img1 {
+    display: none;
+    @include tablette {
+      display: block;
+      transition: 0.5s;
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}

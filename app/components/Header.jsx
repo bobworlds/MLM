@@ -1,9 +1,16 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faBurger, faCartShopping, faMagnifyingGlass, faUser, faUserAlt } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {
+  faBars,
+  faBurger,
+  faCartShopping,
+  faMagnifyingGlass,
+  faUser,
+  faUserAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import {Await, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
 import {useRootLoaderData} from '~/root';
-import Logo from '../images/Logo.png'
+import Logo from '../images/Logo.png';
 
 /**
  * @param {HeaderProps}
@@ -12,18 +19,24 @@ export function Header({header, isLoggedIn, cart}) {
   const {shop, menu} = header;
   return (
     <header className="header">
-     <div className="header__links">
-     <NavLink prefetch="intent" to="/" style={activeLinkStyle} end className='header__links--logo'>
-        <img src={Logo} alt="Logo Merci Le Merch" />
-      </NavLink>
-      <HeaderMenu
-        menu={menu}
-        viewport="desktop"
-        primaryDomainUrl={header.shop.primaryDomain.url}
-      />
-     </div>
+      <div className="header__links">
+        <NavLink
+          prefetch="intent"
+          to="/"
+          style={activeLinkStyle}
+          end
+          className="header__links--logo"
+        >
+          <img src={Logo} alt="Logo Merci Le Merch" />
+        </NavLink>
+        <HeaderMenu
+          menu={menu}
+          viewport="desktop"
+          primaryDomainUrl={header.shop.primaryDomain.url}
+        />
+      </div>
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
-    <hr />
+      <hr />
     </header>
   );
 }
@@ -94,16 +107,25 @@ function HeaderCtas({isLoggedIn, cart}) {
   return (
     <nav className="header-ctas" role="navigation">
       <HeaderMenuMobileToggle />
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end className="logomob">
+      <NavLink
+        prefetch="intent"
+        to="/"
+        style={activeLinkStyle}
+        end
+        className="logomob"
+      >
         <img src={Logo} alt="Logo Merci Le Merch" />
       </NavLink>
       <div className="header-icons">
-      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
-        {isLoggedIn ? <FontAwesomeIcon icon={faUser} /> : <FontAwesomeIcon icon={faUserAlt} />}
-      </NavLink>
-      
-      <CartToggle cart={cart} />
+        <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
+          {isLoggedIn ? (
+            <FontAwesomeIcon icon={faUser} />
+          ) : (
+            <FontAwesomeIcon icon={faUserAlt} />
+          )}
+        </NavLink>
 
+        <CartToggle cart={cart} />
       </div>
     </nav>
   );
@@ -119,15 +141,22 @@ function HeaderMenuMobileToggle() {
 }
 
 function SearchToggle() {
-  return <a href="#search-aside"><FontAwesomeIcon icon={faMagnifyingGlass} /></a>;
+  return (
+    <a href="#search-aside">
+      <FontAwesomeIcon icon={faMagnifyingGlass} />
+    </a>
+  );
 }
 
 /**
  * @param {{count: number}}
  */
 function CartBadge({count}) {
-  return <a href="#cart-aside">
-    <FontAwesomeIcon icon={faCartShopping} /> {count}</a>;
+  return (
+    <a href="#cart-aside">
+      <FontAwesomeIcon icon={faCartShopping} /> {count}
+    </a>
+  );
 }
 
 /**
