@@ -22,7 +22,6 @@ body {
 .title {
   font-family: "Media sans";
   text-transform: uppercase;
-  font-size: 35px;
   max-width: 85%;
   margin: 50px auto;
 }
@@ -31,6 +30,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 15px;
+}
+.title__text h2, .title__text .h2 {
+  font-size: 20px;
 }
 .title__text a {
   font-size: 14px;
