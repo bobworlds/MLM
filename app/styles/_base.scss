@@ -35,6 +35,12 @@ body {
 
     a {
       font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      svg {
+        font-size: 23px;
+      }
     }
   }
   h2 {

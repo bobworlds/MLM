@@ -40,6 +40,7 @@ export default function Homepage() {
           <h2>Assets</h2>
           <a href="" className="title__link">
             Voir tout
+            <MdArrowOutward />
           </a>
         </div>
         <hr />
@@ -53,7 +54,7 @@ export default function Homepage() {
           <h2>Merci l'actu</h2>
           <a href="" className="title__link">
             Voir tout
-            <RxArrowRight />
+            <MdArrowOutward />
           </a>{' '}
         </div>
         <hr />

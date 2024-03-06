@@ -34,6 +34,12 @@ body {
 }
 .title__text a {
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title__text a svg {
+  font-size: 23px;
 }
 .title h2, .title .h2 {
   color: #fdefe2;
