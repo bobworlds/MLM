@@ -21,9 +21,17 @@ body {
   max-width: 85%;
   margin: 50px auto;
 }
-.title h2, .title .h2 {
+.title__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-left: 30px;
   padding-bottom: 15px;
+}
+.title__text a {
+  font-size: 14px;
+}
+.title h2, .title .h2 {
   color: #fdefe2;
 }
 .title h2:hover, .title .h2:hover {

@@ -36,10 +36,12 @@ export default function Homepage() {
     <div className="home">
       <Banner />
       <div className="title">
-        <h2>Assets</h2>
-        <a href="" className="title__link">
-          Voir tout
-        </a>
+        <div className="title__text">
+          <h2>Assets</h2>
+          <a href="" className="title__link">
+            Voir tout
+          </a>
+        </div>
         <hr />
       </div>
       <ActiveSlider />
@@ -47,11 +49,13 @@ export default function Homepage() {
       <Newsletter />
 
       <div className="title">
-        <h2>Merci l'actu</h2>
-        <a href="" className="title__link">
-          Voir tout
-          <RxArrowRight />
-        </a>
+        <div className="title__text">
+          <h2>Merci l'actu</h2>
+          <a href="" className="title__link">
+            Voir tout
+            <RxArrowRight />
+          </a>{' '}
+        </div>
         <hr />
       </div>
       <Grid />

@@ -19,9 +19,18 @@ body {
   font-size: 35px;
   max-width: 85%;
   margin: 50px auto;
-  h2 {
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-left: 30px;
     padding-bottom: 15px;
+
+    a {
+      font-size: 14px;
+    }
+  }
+  h2 {
     color: $grey;
     &:hover {
       transition: 0.5;
