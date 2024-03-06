@@ -1,7 +1,10 @@
 .newsletter {
-  width: 100%;
+  max-width: 80%;
   color: $dark;
   margin: 10vh auto;
+  background-color: $wh;
+  padding: 0 25px;
+  border-radius: 20px;
   @include tablette {
     display: flex;
     justify-content: center;
@@ -9,7 +12,6 @@
   }
   &__form {
     width: 100%;
-    background-color: rgb(244, 237, 237);
     display: flex;
     flex-direction: column;
     align-items: center;

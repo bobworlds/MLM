@@ -1,11 +1,22 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url("../font/Poppins-Regular.ttf") format("truetype");
+}
 html,
 header {
   background-color: #1e1e1e !important;
-  color: white;
+  color: #fdefe2;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .title {
+  text-transform: lowercase;
   font-size: 35px;
   max-width: 85%;
   margin: 50px auto;
@@ -13,19 +24,19 @@ header {
 .title h2, .title .h2 {
   padding-left: 30px;
   padding-bottom: 15px;
-  color: #5f5f5f;
+  color: #fdefe2;
 }
 .title h2:hover, .title .h2:hover {
   transition: 0.5;
-  color: white;
+  color: #fdefe2;
 }
 
 .header {
-  color: white;
+  color: #fdefe2;
   border-radius: 20px;
   z-index: 3;
   margin: auto;
-  box-shadow: 1px 1px 8px 1px rgb(50, 50, 50);
+  box-shadow: 1px 1px 9px 1px rgb(42, 41, 41);
   top: 20px;
   padding: 10px 30px;
   width: 95%;
@@ -47,7 +58,7 @@ header {
 @media screen and (min-width: 767px) {
   .header__links--logo {
     display: block;
-    width: 6vw;
+    width: 3vw;
   }
 }
 
@@ -72,12 +83,12 @@ header {
 }
 
 .header-menu-mobile-toggle svg {
-  color: white;
+  color: #fdefe2;
   font-size: 25px;
 }
 
 .header-icons {
-  color: white;
+  color: #fdefe2;
   display: flex;
   align-items: center;
 }
@@ -99,6 +110,7 @@ header {
 }
 .footer img {
   padding: 2rem 1rem;
+  width: 100px;
 }
 
 .footer-menu {
@@ -160,15 +172,13 @@ header {
   bottom: 30px;
   left: 50px;
   z-index: 0;
-  border: solid 2px #5f5f5f;
   background: #1e1e1e;
-  color: #5f5f5f;
-  text-transform: uppercase;
-  padding: 10px;
+  color: #fdefe2;
+  text-transform: lowercase;
+  padding: 10px 20px;
   width: -moz-fit-content;
   width: fit-content;
-  border-radius: 10px;
-  font-weight: bold;
+  border-radius: 30px;
   display: flex;
   align-items: center;
 }
@@ -188,7 +198,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 2px #5f5f5f;
+  border: solid 2px #fdefe2;
   border-radius: 30px;
   padding: 30px;
   margin-top: 40px;
@@ -219,9 +229,9 @@ header {
   margin-bottom: 10px;
   text-align: center;
   width: 200px;
-  border: solid 2px #5f5f5f;
+  border: solid 2px #fdefe2;
   background: #1e1e1e;
-  color: #5f5f5f;
+  color: #fdefe2;
   text-transform: uppercase;
   padding: 10px;
   font-weight: bold;
@@ -260,24 +270,27 @@ header {
 }
 .grid__btn button {
   background-color: transparent;
-  border: solid 1px #5f5f5f;
-  color: #5f5f5f;
+  border: solid 1px #fdefe2;
+  color: #fdefe2;
 }
 .grid__btn button:hover {
   transition: 0.7s;
   background-color: transparent;
-  color: white;
-  border-color: white;
+  color: #fdefe2;
+  border-color: #fdefe2;
 }
 
 .card-img {
-  border: solid 1px #5f5f5f;
+  border: solid 1px #fdefe2;
 }
 
 .newsletter {
-  width: 100%;
+  max-width: 80%;
   color: #1e1e1e;
   margin: 10vh auto;
+  background-color: #fdefe2;
+  padding: 0 25px;
+  border-radius: 20px;
 }
 @media screen and (min-width: 767px) {
   .newsletter {
@@ -288,7 +301,6 @@ header {
 }
 .newsletter__form {
   width: 100%;
-  background-color: rgb(244, 237, 237);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -305,7 +317,7 @@ header {
 }
 .newsletter__form button {
   background-color: #1e1e1e;
-  color: white;
+  color: #fdefe2;
   padding: 10px 20px;
   border-radius: 10px;
   margin-top: 10px;
@@ -390,28 +402,28 @@ header {
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: white;
-  --bs-body-color-rgb: 255, 255, 255;
+  --bs-body-color: #fdefe2;
+  --bs-body-color-rgb: 253, 239, 226;
   --bs-body-bg: #1e1e1e;
   --bs-body-bg-rgb: 30, 30, 30;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
-  --bs-secondary-color: rgba(255, 255, 255, 0.75);
-  --bs-secondary-color-rgb: 255, 255, 255;
+  --bs-secondary-color: rgba(253, 239, 226, 0.75);
+  --bs-secondary-color-rgb: 253, 239, 226;
   --bs-secondary-bg: #e9ecef;
   --bs-secondary-bg-rgb: 233, 236, 239;
-  --bs-tertiary-color: rgba(255, 255, 255, 0.5);
-  --bs-tertiary-color-rgb: 255, 255, 255;
+  --bs-tertiary-color: rgba(253, 239, 226, 0.5);
+  --bs-tertiary-color-rgb: 253, 239, 226;
   --bs-tertiary-bg: #f8f9fa;
   --bs-tertiary-bg-rgb: 248, 249, 250;
   --bs-heading-color: inherit;
-  --bs-link-color: #5f5f5f;
-  --bs-link-color-rgb: 95, 95, 95;
+  --bs-link-color: #fdefe2;
+  --bs-link-color-rgb: 253, 239, 226;
   --bs-link-decoration: none;
-  --bs-link-hover-color: #4c4c4c;
-  --bs-link-hover-color-rgb: 76, 76, 76;
+  --bs-link-hover-color: #cabfb5;
+  --bs-link-hover-color-rgb: 202, 191, 181;
   --bs-code-color: #d63384;
-  --bs-highlight-color: white;
+  --bs-highlight-color: #fdefe2;
   --bs-highlight-bg: #fff3cd;
   --bs-border-width: 1px;
   --bs-border-style: solid;
@@ -3601,7 +3613,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #6c757d;
   --bs-btn-disabled-border-color: transparent;
   --bs-btn-box-shadow: 0 0 0 #000;
-  --bs-btn-focus-shadow-rgb: 119, 119, 119;
+  --bs-btn-focus-shadow-rgb: 215, 203, 192;
   text-decoration: none;
 }
 .btn-link:focus-visible {
@@ -4228,7 +4240,7 @@ textarea.form-control-lg {
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
   --bs-navbar-toggler-font-size: 1.25rem;
-  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28253, 239, 226, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
   --bs-navbar-toggler-border-radius: var(--bs-border-radius);
   --bs-navbar-toggler-focus-width: 0.25rem;
@@ -4645,7 +4657,7 @@ textarea.form-control-lg {
   --bs-card-title-color: ;
   --bs-card-subtitle-color: ;
   --bs-card-border-width: 2px;
-  --bs-card-border-color: #5f5f5f;
+  --bs-card-border-color: #fdefe2;
   --bs-card-border-radius: 20px;
   --bs-card-box-shadow: ;
   --bs-card-inner-border-radius: 18px;
@@ -4837,7 +4849,7 @@ textarea.form-control-lg {
   --bs-accordion-btn-padding-y: 1rem;
   --bs-accordion-btn-color: var(--bs-body-color);
   --bs-accordion-btn-bg: var(--bs-accordion-bg);
-  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fdefe2'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   --bs-accordion-btn-icon-width: 1.25rem;
   --bs-accordion-btn-icon-transform: rotate(-180deg);
   --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
@@ -12303,7 +12315,6 @@ textarea.form-control-lg {
 }
 @media screen and (min-width: 767px) {
   .swiper-slide:hover {
-    transform: scale(1.05) !important;
     transition: 1s;
   }
   .swiper-slide:hover img:nth-child(1) {

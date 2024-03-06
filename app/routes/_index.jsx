@@ -7,6 +7,9 @@ import ActiveSlider from '~/components/ActiveSlider';
 import HorizontalCard from '~/components/HorizontalCard';
 import Grid from '~/components/Grid';
 import Newsletter from '~/components/Newsletter';
+import {MdArrowOutward} from 'react-icons/md';
+import {RxArrowRight} from 'react-icons/rx';
+
 /**
  * @type {MetaFunction}
  */
@@ -33,7 +36,10 @@ export default function Homepage() {
     <div className="home">
       <Banner />
       <div className="title">
-        <h2>ASSETS</h2>
+        <h2>Assets</h2>
+        <a href="" className="title__link">
+          Voir tout
+        </a>
         <hr />
       </div>
       <ActiveSlider />
@@ -41,7 +47,11 @@ export default function Homepage() {
       <Newsletter />
 
       <div className="title">
-        <h2>MERCI L'ACTU</h2>
+        <h2>Merci l'actu</h2>
+        <a href="" className="title__link">
+          Voir tout
+          <RxArrowRight />
+        </a>
         <hr />
       </div>
       <Grid />

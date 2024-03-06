@@ -39,14 +39,12 @@
       bottom: 30px;
       left: 50px;
       z-index: 0;
-      border: solid 2px $grey;
       background: $dark;
       color: $grey;
-      text-transform: uppercase;
-      padding: 10px;
+      text-transform: lowercase;
+      padding: 10px 20px;
       width: fit-content;
-      border-radius: 10px;
-      font-weight: bold;
+      border-radius: 30px;
       display: flex;
       align-items: center;
       svg {

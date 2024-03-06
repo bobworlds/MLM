@@ -17,10 +17,10 @@ import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import Styles from './styles/style.css';
 import {Layout} from '~/components/Layout';
-import stylesheet from "~/tailwind.css";
-import swiperStyle from "swiper/css"
-import swiperPagination from "swiper/css/pagination"
-import swiperFreemode from "swiper/css/free-mode"
+import stylesheet from '~/tailwind.css';
+import swiperStyle from 'swiper/css';
+import swiperPagination from 'swiper/css/pagination';
+import swiperFreemode from 'swiper/css/free-mode';
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
