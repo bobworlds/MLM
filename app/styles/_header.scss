@@ -8,7 +8,9 @@
   top: 20px;
   padding: 10px 30px;
   width: 95%;
+  font-family: 'Media sans';
   &__links {
+    text-transform: uppercase;
     display: none;
     align-items: center;
     justify-content: space-between;
