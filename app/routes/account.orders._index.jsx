@@ -6,7 +6,7 @@ import {json, redirect} from '@shopify/remix-oxygen';
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: 'Orders'}];
+  return [{title: 'Commandes'}];
 };
 
 /**
@@ -55,7 +55,7 @@ export default function Orders() {
   return (
     <div className="orders">
       <h2>
-        Orders <small>({numberOfOrders})</small>
+        Commandes <small>({numberOfOrders})</small>
       </h2>
       <br />
       {orders.nodes.length ? <OrdersTable orders={orders} /> : <EmptyOrders />}
@@ -75,13 +75,13 @@ function OrdersTable({orders}) {
             return (
               <>
                 <PreviousLink>
-                  {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
+                  {isLoading ? 'Chargement...' : <span>↑ Voir moins</span>}
                 </PreviousLink>
                 {nodes.map((order) => {
                   return <OrderItem key={order.id} order={order} />;
                 })}
                 <NextLink>
-                  {isLoading ? 'Loading...' : <span>Load more ↓</span>}
+                  {isLoading ? 'Chargement...' : <span>Voir plus ↓</span>}
                 </NextLink>
               </>
             );
@@ -97,10 +97,10 @@ function OrdersTable({orders}) {
 function EmptyOrders() {
   return (
     <div>
-      <p>You haven&apos;t placed any orders yet.</p>
+      <p>Vous n'avez fait aucune commande</p>
       <br />
       <p>
-        <Link to="/collections">Start Shopping →</Link>
+        <Link to="/collections">Commencer vos achats →</Link>
       </p>
     </div>
   );
@@ -120,7 +120,7 @@ function OrderItem({order}) {
         <p>{order.financialStatus}</p>
         <p>{order.fulfillmentStatus}</p>
         <Money data={order.currentTotalPrice} />
-        <Link to={`/account/orders/${btoa(order.id)}`}>View Order →</Link>
+        <Link to={`/account/orders/${btoa(order.id)}`}>Voir commande →</Link>
       </fieldset>
       <br />
     </>

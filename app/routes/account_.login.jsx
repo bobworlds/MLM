@@ -5,7 +5,7 @@ import {Form, Link, useActionData} from '@remix-run/react';
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: 'Login'}];
+  return [{title: 'Connexion'}];
 };
 
 /**
@@ -35,7 +35,7 @@ export async function action({request, context}) {
     const validInputs = Boolean(email && password);
 
     if (!validInputs) {
-      throw new Error('Please provide both an email and a password.');
+      throw new Error('Entrez un e-mail et un mot de passe.');
     }
 
     const {customerAccessTokenCreate} = await storefront.mutate(
@@ -74,29 +74,31 @@ export default function Login() {
 
   return (
     <div className="login">
-      <h1>Sign in.</h1>
-      <Form method="POST">
+      <h1 className="login__title">Connexion</h1>
+      <Form method="POST" className="login__form">
         <fieldset>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">Adresse e-mail</label>
           <input
             id="email"
             name="email"
             type="email"
             autoComplete="email"
             required
-            placeholder="Email address"
-            aria-label="Email address"
+            placeholder="E-mail"
+            aria-label="E-mail"
             // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus
           />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="login__pwd">
+            Mot de passe
+          </label>
           <input
             id="password"
             name="password"
             type="password"
             autoComplete="current-password"
-            placeholder="Password"
-            aria-label="Password"
+            placeholder="Mot de passe"
+            aria-label="Mot de passe"
             minLength={8}
             required
           />
@@ -110,15 +112,15 @@ export default function Login() {
         ) : (
           <br />
         )}
-        <button type="submit">Sign in</button>
+        <button type="submit">Se connecter</button>
       </Form>
       <br />
       <div>
         <p>
-          <Link to="/account/recover">Forgot password →</Link>
+          <Link to="/account/recover">Mot de passe oublié →</Link>
         </p>
         <p>
-          <Link to="/account/register">Register →</Link>
+          <Link to="/account/register">Créer un compte →</Link>
         </p>
       </div>
     </div>

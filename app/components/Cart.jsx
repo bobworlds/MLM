@@ -1,6 +1,7 @@
 import {CartForm, Image, Money} from '@shopify/hydrogen';
 import {Link} from '@remix-run/react';
 import {useVariantUrl} from '~/utils';
+import {MdArrowRight} from 'react-icons/md';
 
 /**
  * @param {CartMainProps}
@@ -123,7 +124,7 @@ function CartCheckoutActions({checkoutUrl}) {
   return (
     <div>
       <a href={checkoutUrl} target="_self">
-        <p>Continue to Checkout &rarr;</p>
+        <p>Paiement &rarr;</p>
       </a>
       <br />
     </div>
@@ -143,9 +144,9 @@ export function CartSummary({cost, layout, children = null}) {
 
   return (
     <div aria-labelledby="cart-summary" className={className}>
-      <h4>Totals</h4>
+      <h4>Total</h4>
       <dl className="cart-subtotal">
-        <dt>Subtotal</dt>
+        <dt>Sous-total</dt>
         <dd>
           {cost?.subtotalAmount?.amount ? (
             <Money data={cost?.subtotalAmount} />
@@ -169,7 +170,7 @@ function CartLineRemoveButton({lineIds}) {
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{lineIds}}
     >
-      <button type="submit">Remove</button>
+      <button type="submit">Supprimer</button>
     </CartForm>
   );
 }
@@ -248,10 +249,7 @@ export function CartEmpty({hidden = false, layout = 'aside'}) {
   return (
     <div hidden={hidden}>
       <br />
-      <p>
-        Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
-        started!
-      </p>
+      <p>Votre panier est vide !</p>
       <br />
       <Link
         to="/collections"
@@ -261,7 +259,7 @@ export function CartEmpty({hidden = false, layout = 'aside'}) {
           }
         }}
       >
-        Continue shopping →
+        Continuez vos achats →
       </Link>
     </div>
   );
@@ -283,12 +281,12 @@ function CartDiscounts({discountCodes}) {
       {/* Have existing discount, display it with a remove option */}
       <dl hidden={!codes.length}>
         <div>
-          <dt>Discount(s)</dt>
+          <dt>Remise(s)</dt>
           <UpdateDiscountForm>
             <div className="cart-discount">
               <code>{codes?.join(', ')}</code>
               &nbsp;
-              <button>Remove</button>
+              <button>Supprimer</button>
             </div>
           </UpdateDiscountForm>
         </div>
@@ -299,7 +297,7 @@ function CartDiscounts({discountCodes}) {
         <div>
           <input type="text" name="discountCode" placeholder="Discount code" />
           &nbsp;
-          <button type="submit">Apply</button>
+          <button type="submit">Appliquer</button>
         </div>
       </UpdateDiscountForm>
     </div>

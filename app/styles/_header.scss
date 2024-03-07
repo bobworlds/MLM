@@ -9,6 +9,7 @@
   padding: 10px 30px;
   width: 95%;
   font-family: 'Media sans';
+  font-size: 13px;
   &__links {
     text-transform: uppercase;
     display: none;
@@ -60,4 +61,9 @@
   a {
     padding-left: 10px;
   }
+}
+
+// Cart Aside
+.aside {
+  background-color: $dark;
 }

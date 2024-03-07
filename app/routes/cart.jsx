@@ -9,7 +9,7 @@ import {useRootLoaderData} from '~/root';
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: `Hydrogen | Cart`}];
+  return [{title: `Panier`}];
 };
 
 /**
@@ -93,11 +93,11 @@ export default function Cart() {
 
   return (
     <div className="cart">
-      <h1>Cart</h1>
-      <Suspense fallback={<p>Loading cart ...</p>}>
+      <h1>Panier</h1>
+      <Suspense fallback={<p>Chargement du panier ...</p>}>
         <Await
           resolve={cartPromise}
-          errorElement={<div>An error occurred</div>}
+          errorElement={<div>Une erreur est survenue</div>}
         >
           {(cart) => {
             return <CartMain layout="page" cart={cart} />;

@@ -196,7 +196,7 @@ function ProductPrice({selectedVariant}) {
     <div className="product-price">
       {selectedVariant?.compareAtPrice ? (
         <>
-          <p>Sale</p>
+          <p>Remise</p>
           <br />
           <div className="product-price-on-sale">
             {selectedVariant ? <Money data={selectedVariant.price} /> : null}
@@ -246,7 +246,7 @@ function ProductForm({product, selectedVariant, variants}) {
             : []
         }
       >
-        {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
+        {selectedVariant?.availableForSale ? 'Ajouter au panier' : 'En rupture'}
       </AddToCartButton>
     </div>
   );

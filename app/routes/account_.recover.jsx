@@ -27,7 +27,7 @@ export async function action({request, context}) {
 
   try {
     if (!email) {
-      throw new Error('Please provide an email.');
+      throw new Error('Entrez un e-mail.');
     }
     await storefront.mutate(CUSTOMER_RECOVER_MUTATION, {
       variables: {email},
@@ -48,30 +48,30 @@ export default function Recover() {
   const action = useActionData();
 
   return (
-    <div className="account-recover">
+    <div className="account-recover login">
       <div>
         {action?.resetRequested ? (
           <>
-            <h1>Request Sent.</h1>
+            <h1>Demande envoyée</h1>
             <p>
-              If that email address is in our system, you will receive an email
-              with instructions about how to reset your password in a few
-              minutes.
+              Si cette adresse e-mail est dans notre système, vous recevrez des
+              instructions pour créer un nouveau mot de passe.
             </p>
             <br />
-            <Link to="/account/login">Return to Login</Link>
+            <Link to="/account/login">Retour</Link>
           </>
         ) : (
           <>
-            <h1>Forgot Password.</h1>
-            <p>
-              Enter the email address associated with your account to receive a
-              link to reset your password.
+            <h1>Mot de passe oublié</h1>
+            <p className="text-center">
+              Entrez votre adresse mail associée avec votre compte pour
+              <br />
+              recevoir un lien afin de créer un nouveau mot de passe.
             </p>
             <br />
             <Form method="POST">
               <fieldset>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">E-mail</label>
                 <input
                   aria-label="Email address"
                   autoComplete="email"
@@ -79,7 +79,7 @@ export default function Recover() {
                   autoFocus
                   id="email"
                   name="email"
-                  placeholder="Email address"
+                  placeholder="E-mail"
                   required
                   type="email"
                 />
@@ -93,12 +93,12 @@ export default function Recover() {
               ) : (
                 <br />
               )}
-              <button type="submit">Request Reset Link</button>
+              <button type="submit">Demander le lien</button>
             </Form>
             <div>
               <br />
               <p>
-                <Link to="/account/login">Login →</Link>
+                <Link to="/account/login">Connexion →</Link>
               </p>
             </div>
           </>

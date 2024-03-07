@@ -5,7 +5,7 @@ import {Form, useActionData} from '@remix-run/react';
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: 'Reset Password'}];
+  return [{title: 'Nouveau mot de passe'}];
 };
 
 /**
@@ -68,11 +68,11 @@ export default function Reset() {
 
   return (
     <div className="account-reset">
-      <h1>Reset Password.</h1>
-      <p>Enter a new password for your account.</p>
+      <h1>Nouveau mot de passe</h1>
+      <p>Entrez un nouveau mot de passe pour votre compte.</p>
       <Form method="POST">
         <fieldset>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Mot de passe</label>
           <input
             aria-label="Password"
             autoComplete="current-password"
@@ -81,18 +81,18 @@ export default function Reset() {
             id="password"
             minLength={8}
             name="password"
-            placeholder="Password"
+            placeholder="Mot de passe"
             required
             type="password"
           />
-          <label htmlFor="passwordConfirm">Re-enter password</label>
+          <label htmlFor="passwordConfirm">Retaper votre mot de passe</label>
           <input
             aria-label="Re-enter password"
             autoComplete="current-password"
             id="passwordConfirm"
             minLength={8}
             name="passwordConfirm"
-            placeholder="Re-enter password"
+            placeholder="Retaper votre mot de passe"
             required
             type="password"
           />
@@ -106,11 +106,11 @@ export default function Reset() {
         ) : (
           <br />
         )}
-        <button type="submit">Reset</button>
+        <button type="submit">Créer</button>
       </Form>
       <br />
       <p>
-        <a href="/account/login">Back to login →</a>
+        <a href="/account/login">Retourner à la page de connexion →</a>
       </p>
     </div>
   );

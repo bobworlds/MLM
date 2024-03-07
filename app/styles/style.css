@@ -61,6 +61,7 @@ body {
   padding: 10px 30px;
   width: 95%;
   font-family: "Media sans";
+  font-size: 13px;
 }
 .header__links {
   text-transform: uppercase;
@@ -116,6 +117,10 @@ body {
 }
 .header-icons a {
   padding-left: 10px;
+}
+
+.aside {
+  background-color: #1e1e1e;
 }
 
 .footer {
@@ -12398,6 +12403,27 @@ textarea.form-control-lg {
 }
 .pres__img img {
   width: 100%;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0;
+}
+.login form {
+  border: solid 1px #fdefe2;
+  border-radius: 20px;
+  padding: 30px 40px;
+}
+.login button {
+  border: solid 1px #fdefe2;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+.login label {
+  padding-top: 10px;
 }
 
 .swiper-pagination-bullet-active {

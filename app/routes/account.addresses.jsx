@@ -10,7 +10,7 @@ import {
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: 'Addresses'}];
+  return [{title: 'Adresses'}];
 };
 
 /**
@@ -212,14 +212,14 @@ export default function Addresses() {
 
   return (
     <div className="account-addresses">
-      <h2>Addresses</h2>
+      <h2>Adresses</h2>
       <br />
       {!addresses.nodes.length ? (
-        <p>You have no addresses saved.</p>
+        <p>Vous n'avez aucune adresse enregistrée.</p>
       ) : (
         <div>
           <div>
-            <legend>Create address</legend>
+            <legend>Créer une adresse</legend>
             <NewAddressForm />
           </div>
           <br />
@@ -259,7 +259,7 @@ function NewAddressForm() {
             formMethod="POST"
             type="submit"
           >
-            {stateForMethod('POST') !== 'idle' ? 'Creating' : 'Create'}
+            {stateForMethod('POST') !== 'idle' ? 'Création' : 'Créer'}
           </button>
         </div>
       )}
@@ -273,7 +273,7 @@ function NewAddressForm() {
 function ExistingAddresses({addresses, defaultAddress}) {
   return (
     <div>
-      <legend>Existing addresses</legend>
+      <legend>Adresses existantes</legend>
       {addresses.nodes.map((address) => (
         <AddressForm
           key={address.id}
@@ -287,14 +287,18 @@ function ExistingAddresses({addresses, defaultAddress}) {
                 formMethod="PUT"
                 type="submit"
               >
-                {stateForMethod('PUT') !== 'idle' ? 'Saving' : 'Save'}
+                {stateForMethod('PUT') !== 'idle'
+                  ? 'Enregistrement'
+                  : 'Enregistrer'}
               </button>
               <button
                 disabled={stateForMethod('DELETE') !== 'idle'}
                 formMethod="DELETE"
                 type="submit"
               >
-                {stateForMethod('DELETE') !== 'idle' ? 'Deleting' : 'Delete'}
+                {stateForMethod('DELETE') !== 'idle'
+                  ? 'Suppression'
+                  : 'Supprimer'}
               </button>
             </div>
           )}
@@ -317,111 +321,110 @@ export function AddressForm({address, defaultAddress, children}) {
     <Form id={address.id}>
       <fieldset>
         <input type="hidden" name="addressId" defaultValue={address.id} />
-        <label htmlFor="firstName">First name*</label>
+        <label htmlFor="firstName">Prénom *</label>
         <input
           aria-label="First name"
           autoComplete="given-name"
           defaultValue={address?.firstName ?? ''}
           id="firstName"
           name="firstName"
-          placeholder="First name"
+          placeholder="Prénom"
           required
           type="text"
         />
-        <label htmlFor="lastName">Last name*</label>
+        <label htmlFor="lastName">Nom de famille*</label>
         <input
           aria-label="Last name"
           autoComplete="family-name"
           defaultValue={address?.lastName ?? ''}
           id="lastName"
           name="lastName"
-          placeholder="Last name"
+          placeholder="Nom de famille"
           required
           type="text"
         />
-        <label htmlFor="company">Company</label>
+        <label htmlFor="company">Société</label>
         <input
           aria-label="Company"
           autoComplete="organization"
           defaultValue={address?.company ?? ''}
           id="company"
           name="company"
-          placeholder="Company"
+          placeholder="Société"
           type="text"
         />
-        <label htmlFor="address1">Address line*</label>
+        <label htmlFor="address1">Adresse ligne 1*</label>
         <input
           aria-label="Address line 1"
           autoComplete="address-line1"
           defaultValue={address?.address1 ?? ''}
           id="address1"
           name="address1"
-          placeholder="Address line 1*"
+          placeholder="Adresse ligne 1*"
           required
           type="text"
         />
-        <label htmlFor="address2">Address line 2</label>
+        <label htmlFor="address2">Adresse ligne 2</label>
         <input
           aria-label="Address line 2"
           autoComplete="address-line2"
           defaultValue={address?.address2 ?? ''}
           id="address2"
           name="address2"
-          placeholder="Address line 2"
+          placeholder="Adresse ligne 2"
           type="text"
         />
-        <label htmlFor="city">City*</label>
+        <label htmlFor="city">Ville*</label>
         <input
           aria-label="City"
           autoComplete="address-level2"
           defaultValue={address?.city ?? ''}
           id="city"
           name="city"
-          placeholder="City"
+          placeholder="Ville"
           required
           type="text"
         />
-        <label htmlFor="province">State / Province*</label>
+        <label htmlFor="province">Région*</label>
         <input
           aria-label="State"
           autoComplete="address-level1"
           defaultValue={address?.province ?? ''}
           id="province"
           name="province"
-          placeholder="State / Province"
-          required
+          placeholder="Région"
           type="text"
         />
-        <label htmlFor="zip">Zip / Postal Code*</label>
+        <label htmlFor="zip">Code postal*</label>
         <input
           aria-label="Zip"
           autoComplete="postal-code"
           defaultValue={address?.zip ?? ''}
           id="zip"
           name="zip"
-          placeholder="Zip / Postal Code"
+          placeholder="Code postal"
           required
           type="text"
         />
-        <label htmlFor="country">Country*</label>
+        <label htmlFor="country">Pays*</label>
         <input
           aria-label="Country"
           autoComplete="country-name"
           defaultValue={address?.country ?? ''}
           id="country"
           name="country"
-          placeholder="Country"
+          placeholder="Pays"
           required
           type="text"
         />
-        <label htmlFor="phone">Phone</label>
+        <label htmlFor="phone">Téléphone</label>
         <input
           aria-label="Phone"
           autoComplete="tel"
           defaultValue={address?.phone ?? ''}
           id="phone"
           name="phone"
-          placeholder="+16135551111"
+          placeholder="+33"
           pattern="^\+?[1-9]\d{3,14}$"
           type="tel"
         />
@@ -432,7 +435,9 @@ export function AddressForm({address, defaultAddress, children}) {
             name="defaultAddress"
             type="checkbox"
           />
-          <label htmlFor="defaultAddress">Set as default address</label>
+          <label htmlFor="defaultAddress">
+            Définir comme adresse par défaut
+          </label>
         </div>
         {error ? (
           <p>

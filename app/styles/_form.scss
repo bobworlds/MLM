@@ -1,0 +1,20 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0;
+  form {
+    border: solid 1px $wh;
+    border-radius: 20px;
+    padding: 30px 40px;
+  }
+  button {
+    border: solid 1px $wh;
+    padding: 5px 15px;
+    border-radius: 20px;
+  }
+  label {
+    padding-top: 10px;
+  }
+}

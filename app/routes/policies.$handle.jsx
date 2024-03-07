@@ -5,7 +5,7 @@ import {Link, useLoaderData} from '@remix-run/react';
  * @type {MetaFunction<typeof loader>}
  */
 export const meta = ({data}) => {
-  return [{title: `Hydrogen | ${data?.policy.title ?? ''}`}];
+  return [{title: `MERCI LE MERCH | ${data?.policy.title ?? ''}`}];
 };
 
 /**
@@ -49,7 +49,7 @@ export default function Policy() {
       <br />
       <br />
       <div>
-        <Link to="/policies">← Back to Policies</Link>
+        <Link to="/policies">← Retour</Link>
       </div>
       <br />
       <h1>{policy.title}</h1>

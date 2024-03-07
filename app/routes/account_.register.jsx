@@ -54,7 +54,7 @@ export async function action({request, context}) {
 
     const newCustomer = customerCreate?.customer;
     if (!newCustomer?.id) {
-      throw new Error('Could not create customer');
+      throw new Error('On ne peut pas créer de compte');
     }
 
     // get an access token for the new customer
@@ -102,40 +102,40 @@ export default function Register() {
   const error = data?.error || null;
   return (
     <div className="login">
-      <h1>Register.</h1>
+      <h1>Créer un compte</h1>
       <Form method="POST">
         <fieldset>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">Adresse mail</label>
           <input
             id="email"
             name="email"
             type="email"
             autoComplete="email"
             required
-            placeholder="Email address"
-            aria-label="Email address"
+            placeholder="E-mail"
+            aria-label="E-mail"
             // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus
           />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Mot de passe</label>
           <input
             id="password"
             name="password"
             type="password"
             autoComplete="current-password"
-            placeholder="Password"
-            aria-label="Password"
+            placeholder="Mot de passe"
+            aria-label="Mot de passe"
             minLength={8}
             required
           />
-          <label htmlFor="passwordConfirm">Re-enter password</label>
+          <label htmlFor="passwordConfirm">Retaper votre mot de passe</label>
           <input
             id="passwordConfirm"
             name="passwordConfirm"
             type="password"
             autoComplete="current-password"
-            placeholder="Re-enter password"
-            aria-label="Re-enter password"
+            placeholder="Retaper votre mot de passe"
+            aria-label="Retaper votre mot de passe"
             minLength={8}
             required
           />
@@ -149,11 +149,11 @@ export default function Register() {
         ) : (
           <br />
         )}
-        <button type="submit">Register</button>
+        <button type="submit">S'enregistrer</button>
       </Form>
       <br />
       <p>
-        <Link to="/account/login">Login →</Link>
+        <Link to="/account/login">Connexion →</Link>
       </p>
     </div>
   );

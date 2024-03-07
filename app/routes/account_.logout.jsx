@@ -4,7 +4,7 @@ import {json, redirect} from '@shopify/remix-oxygen';
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: 'Logout'}];
+  return [{title: 'Déconnexion'}];
 };
 
 export async function loader() {

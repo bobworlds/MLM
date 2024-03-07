@@ -53,12 +53,12 @@ export default function Collection() {
         {({nodes, isLoading, PreviousLink, NextLink}) => (
           <>
             <PreviousLink>
-              {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
+              {isLoading ? 'Chargement...' : <span>↑ Voir moins</span>}
             </PreviousLink>
             <ProductsGrid products={nodes} />
             <br />
             <NextLink>
-              {isLoading ? 'Loading...' : <span>Load more ↓</span>}
+              {isLoading ? 'Chargement...' : <span>Voir plus ↓</span>}
             </NextLink>
           </>
         )}

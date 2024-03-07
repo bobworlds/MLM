@@ -10,7 +10,7 @@ import {
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: 'Profile'}];
+  return [{title: 'Profil'}];
 };
 
 /**
@@ -112,52 +112,52 @@ export default function AccountProfile() {
 
   return (
     <div className="account-profile">
-      <h2>My profile</h2>
+      <h2>Mon profil</h2>
       <br />
       <Form method="PUT">
-        <legend>Personal information</legend>
+        <legend>Informations personnelles</legend>
         <fieldset>
-          <label htmlFor="firstName">First name</label>
+          <label htmlFor="firstName">Prénom</label>
           <input
             id="firstName"
             name="firstName"
             type="text"
             autoComplete="given-name"
-            placeholder="First name"
-            aria-label="First name"
+            placeholder="Prénom"
+            aria-label="Prénom"
             defaultValue={customer.firstName ?? ''}
             minLength={2}
           />
-          <label htmlFor="lastName">Last name</label>
+          <label htmlFor="lastName">Nom de famille</label>
           <input
             id="lastName"
             name="lastName"
             type="text"
             autoComplete="family-name"
-            placeholder="Last name"
-            aria-label="Last name"
+            placeholder="Nom de famille"
+            aria-label="Nom de famille"
             defaultValue={customer.lastName ?? ''}
             minLength={2}
           />
-          <label htmlFor="phone">Mobile</label>
+          <label htmlFor="phone">Portable</label>
           <input
             id="phone"
             name="phone"
             type="tel"
             autoComplete="tel"
-            placeholder="Mobile"
-            aria-label="Mobile"
+            placeholder="Portable"
+            aria-label="Portable"
             defaultValue={customer.phone ?? ''}
           />
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">Adresse e-mail</label>
           <input
             id="email"
             name="email"
             type="email"
             autoComplete="email"
             required
-            placeholder="Email address"
-            aria-label="Email address"
+            placeholder="E-mail"
+            aria-label="E-mail"
             defaultValue={customer.email ?? ''}
           />
           <div className="account-profile-marketing">
@@ -170,25 +170,25 @@ export default function AccountProfile() {
               defaultChecked={customer.acceptsMarketing}
             />
             <label htmlFor="acceptsMarketing">
-              &nbsp; Subscribed to marketing communications
+              &nbsp; S'inscrire à la newsletter
             </label>
           </div>
         </fieldset>
         <br />
-        <legend>Change password (optional)</legend>
+        <legend>Changer le mot de passe (facultatif)</legend>
         <fieldset>
-          <label htmlFor="currentPassword">Current password</label>
+          <label htmlFor="currentPassword">Mot de passe actuel </label>
           <input
             id="currentPassword"
             name="currentPassword"
             type="password"
             autoComplete="current-password"
-            placeholder="Current password"
-            aria-label="Current password"
+            placeholder="Mot de passe actuel "
+            aria-label="Mot de passe actuel "
             minLength={8}
           />
 
-          <label htmlFor="newPassword">New password</label>
+          <label htmlFor="newPassword">Nouveau mot de passe</label>
           <input
             id="newPassword"
             name="newPassword"
@@ -198,16 +198,18 @@ export default function AccountProfile() {
             minLength={8}
           />
 
-          <label htmlFor="newPasswordConfirm">New password (confirm)</label>
+          <label htmlFor="newPasswordConfirm">
+            Nouveau mot de passe (confirmer)
+          </label>
           <input
             id="newPasswordConfirm"
             name="newPasswordConfirm"
             type="password"
-            placeholder="New password (confirm)"
-            aria-label="New password confirm"
+            placeholder="Nouveau mot de passe (confirmer)"
+            aria-label="Nouveau mot de passe (confirmer)"
             minLength={8}
           />
-          <small>Passwords must be at least 8 characters.</small>
+          <small>Le mot de passe doit contenir au moins 8 caractères.</small>
         </fieldset>
         {action?.error ? (
           <p>
@@ -219,7 +221,7 @@ export default function AccountProfile() {
           <br />
         )}
         <button type="submit" disabled={state !== 'idle'}>
-          {state !== 'idle' ? 'Updating' : 'Update'}
+          {state !== 'idle' ? 'Mis à jour' : 'Mettre à jour'}
         </button>
       </Form>
     </div>

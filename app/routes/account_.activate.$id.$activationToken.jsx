@@ -5,7 +5,7 @@ import {Form, useActionData} from '@remix-run/react';
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: 'Activate Account'}];
+  return [{title: 'Activation du compte'}];
 };
 
 /**
@@ -90,31 +90,31 @@ export default function Activate() {
 
   return (
     <div className="account-activate">
-      <h1>Activate Account.</h1>
-      <p>Create your password to activate your account.</p>
+      <h1>Activation du compte</h1>
+      <p>Créer un mot de passe pour activer votre compte</p>
       <Form method="POST">
         <fieldset>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Mot de passe</label>
           <input
             id="password"
             name="password"
             type="password"
             autoComplete="current-password"
-            placeholder="Password"
-            aria-label="Password"
+            placeholder="Mot de passe"
+            aria-label="Mot de passe"
             minLength={8}
             required
             // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus
           />
-          <label htmlFor="passwordConfirm">Re-enter password</label>
+          <label htmlFor="passwordConfirm">Retaper votre mot de passe</label>
           <input
             id="passwordConfirm"
             name="passwordConfirm"
             type="password"
             autoComplete="current-password"
-            placeholder="Re-enter password"
-            aria-label="Re-enter password"
+            placeholder="Retaper votre mot de passe"
+            aria-label="Retaper votre mot de passe"
             minLength={8}
             required
           />
@@ -132,7 +132,7 @@ export default function Activate() {
           className="bg-primary text-contrast rounded py-2 px-4 focus:shadow-outline block w-full"
           type="submit"
         >
-          Save
+          Enregistrer
         </button>
       </Form>
     </div>

@@ -142,7 +142,7 @@ export function ErrorBoundary() {
   const error = useRouteError();
   const rootData = useRootLoaderData();
   const nonce = useNonce();
-  let errorMessage = 'Unknown error';
+  let errorMessage = 'Erreur inconnue';
   let errorStatus = 500;
 
   if (isRouteErrorResponse(error)) {

@@ -22,7 +22,7 @@ img {
 * --------------------------------------------------
 */
 aside {
-  background: var(--color-light);
+  background: #1e1e1e;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
   height: 100vh;
   max-width: var(--aside-width);
