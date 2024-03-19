@@ -11,6 +11,8 @@ import {Await, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
 import {useRootLoaderData} from '~/root';
 import Logo from '../images/Logo.png';
+import { MdArrowDropDown } from 'react-icons/md';
+import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 
 /**
  * @param {HeaderProps}
@@ -83,18 +85,40 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
             ? new URL(item.url).pathname
             : item.url;
         return (
-          <NavLink
-            className="header-menu-item"
-            end
+          <Navbar variant="dark" bg="dark" expand="lg">
+          <Container fluid>
+          <Navbar.Toggle aria-controls="navbar-dark-example" />
+    <Navbar.Collapse id="navbar-dark-example">
+              <Nav>
+                <NavDropdown
+                  id="nav-dropdown-dark-example header-menu-item"
+                  title={item.title}
+                  end
             key={item.id}
             onClick={closeAside}
-            prefetch="intent"
-            style={activeLinkStyle}
-            to={url}
-          >
-            {item.title}
-          </NavLink>
+                  key={item.id}
+                  menuVariant="dark"
+                  to={url}
+                > 
+                  {item.items.map((sousm) => {
+                    return (
+                      <NavDropdown.Item href="#action/3.1">{sousm.title}</NavDropdown.Item>
+                    )
+                    
+                  })}
+                  
+                  
+                </NavDropdown>
+              </Nav>
+            </Navbar.Collapse>
+            </Container>
+    </Navbar>
+         
+          
+         
         );
+        
+        
       })}
     </nav>
   );
@@ -176,45 +200,94 @@ function CartToggle({cart}) {
 }
 
 const FALLBACK_HEADER_MENU = {
-  id: 'gid://shopify/Menu/199655587896',
+  id: "gid://shopify/Menu/208357884155",
+  title: "Main menu",
   items: [
     {
-      id: 'gid://shopify/MenuItem/461609500728',
+      id: "gid://shopify/MenuItem/486780961019",
       resourceId: null,
-      tags: [],
-      title: 'Collections',
-      type: 'HTTP',
-      url: '/collections',
-      items: [],
+      title: "Assets",
+      type: "HTTP",
+      url: "https://merci-le-merch.myshopify.com#",
+      items: [
+        {
+          id: "gid://shopify/MenuItem/498515902715",
+          resourceId: null,
+          title: "Par catégorie",
+          type: "HTTP",
+          url: "https://merci-le-merch.myshopify.com#"
+        },
+        {
+          id: "gid://shopify/MenuItem/498515935483",
+          resourceId: null,
+          title: "Par thème",
+          type: "HTTP",
+          url: "https://merci-le-merch.myshopify.com#"
+        },
+        {
+          id: "gid://shopify/MenuItem/498515968251",
+          resourceId: null,
+          title: "Par prix",
+          type: "HTTP",
+          url: "https://merci-le-merch.myshopify.com#"
+        }
+      ]
     },
     {
-      id: 'gid://shopify/MenuItem/461609533496',
+      id: "gid://shopify/MenuItem/486780993787",
       resourceId: null,
-      tags: [],
-      title: 'Blog',
-      type: 'HTTP',
-      url: '/blogs/journal',
-      items: [],
+      title: "Services",
+      type: "HTTP",
+      url: "https://merci-le-merch.myshopify.com#",
+      items: [
+        {
+          id: "gid://shopify/MenuItem/498516001019",
+          resourceId: null,
+          title: "Faire son merch'",
+          type: "HTTP",
+          url: "https://merci-le-merch.myshopify.com#"
+        },
+        {
+          id: "gid://shopify/MenuItem/498516033787",
+          resourceId: null,
+          title: "Consulting",
+          type: "HTTP",
+          url: "https://merci-le-merch.myshopify.com#"
+        }
+      ]
     },
     {
-      id: 'gid://shopify/MenuItem/461609566264',
+      id: "gid://shopify/MenuItem/486781026555",
       resourceId: null,
-      tags: [],
-      title: 'Policies',
-      type: 'HTTP',
-      url: '/policies',
-      items: [],
+      title: "Ressources",
+      type: "HTTP",
+      url: "https://merci-le-merch.myshopify.com/ressources",
+      items: [
+        {
+          id: "gid://shopify/MenuItem/498516066555",
+          resourceId: null,
+          title: "Podcast",
+          type: "HTTP",
+          url: "https://merci-le-merch.myshopify.com#"
+        },
+        {
+          id: "gid://shopify/MenuItem/498516099323",
+          resourceId: "gid://shopify/Blog/89411846395",
+          title: "Blog",
+          type: "BLOG",
+          url: "https://merci-le-merch.myshopify.com/blogs/news"
+        }
+      ]
     },
     {
-      id: 'gid://shopify/MenuItem/461609599032',
-      resourceId: 'gid://shopify/Page/92591030328',
-      tags: [],
-      title: 'About',
-      type: 'PAGE',
-      url: '/pages/about',
-      items: [],
-    },
-  ],
+      id: "gid://shopify/MenuItem/493068058875",
+      resourceId: null,
+      title: "Newsletter",
+      type: "HTTP",
+      url: "https://merci-le-merch.myshopify.com#",
+      items: []
+    }
+  ]
 };
 
 /**

@@ -170,6 +170,11 @@ aside li {
 
 .header-menu-item {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.header-menu-item svg {
+  font-size: 30px;
 }
 
 .header-ctas {

@@ -12,7 +12,7 @@ import {
   ScrollRestoration,
   isRouteErrorResponse,
 } from '@remix-run/react';
-import favicon from '../public/favicon.svg';
+import favicon from '../public/Logo.png';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import Styles from './styles/style.css';
