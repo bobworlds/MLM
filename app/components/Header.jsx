@@ -208,7 +208,7 @@ const FALLBACK_HEADER_MENU = {
       resourceId: null,
       title: "Assets",
       type: "HTTP",
-      url: "https://merci-le-merch.myshopify.com#",
+      url: "https://merci-le-merch.myshopify.com/collections",
       items: [
         {
           id: "gid://shopify/MenuItem/498515902715",
